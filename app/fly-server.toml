@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for weatherman-application-19-jun-10adaeb8-0e6c-420f-a816-25226f8e6c6a-server on 2024-06-19T13:58:48+05:30
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'weatherman-application-19-jun-10adaeb8-0e6c-420f-a816-25226f8e6c6a-server'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
